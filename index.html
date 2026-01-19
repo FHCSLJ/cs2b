@@ -12,56 +12,86 @@
             --card: #161b22;
             --border: #30363d;
             --success: #3fb950;
+            --btn-hover: #30363d;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 850px;
             margin: 40px auto;
             padding: 0 20px;
         }
         h1 { border-bottom: 1px solid var(--border); padding-bottom: 10px; color: white; }
+        
         .lecture-list { list-style: none; padding: 0; }
+        
         .lecture-item {
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 6px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             padding: 20px;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center; /* Centered for the split-button look */
         }
+
         .lecture-content { flex-grow: 1; }
-        .lecture-item a.play-link {
+        
+        .play-link {
             text-decoration: none;
             color: var(--accent);
             font-weight: bold;
             font-size: 1.2rem;
             display: block;
         }
+        .play-link:hover { text-decoration: underline; }
+        
         .description { font-size: 0.9rem; color: #8b949e; margin-top: 5px; }
         
+        /* Resource Links Container */
         .resource-links {
             margin-left: 20px;
-            text-align: right;
-            min-width: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
+
+        /* Split Button Styling */
+        .pdf-group {
+            display: flex;
+            white-space: nowrap;
+        }
+
         .pdf-link {
             display: inline-block;
             background: #21262d;
             border: 1px solid var(--border);
             color: var(--text);
-            padding: 6px 12px;
-            border-radius: 4px;
+            padding: 8px 14px;
             text-decoration: none;
             font-size: 0.85rem;
-            transition: background 0.2s;
+            transition: all 0.2s;
         }
-        .pdf-link:hover { background: #30363d; border-color: #8b949e; }
-        
+
+        .view-btn {
+            border-radius: 6px 0 0 6px;
+            border-right: none;
+        }
+
+        .dl-btn {
+            border-radius: 0 6px 6px 0;
+        }
+
+        .pdf-link:hover {
+            background: var(--btn-hover);
+            border-color: #8b949e;
+            color: white;
+            z-index: 1;
+        }
+
         .accessibility-note {
             display: block;
             font-size: 0.75rem;
@@ -69,28 +99,37 @@
             margin-top: 8px;
             font-style: italic;
         }
-        code { background: #21262d; padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+
+        code { background: #21262d; padding: 2px 4px; border-radius: 4px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 0.9em; }
+        
+        footer { margin-top: 50px; font-size: 0.8rem; color: #484f58; text-align: center; }
     </style>
 </head>
 <body>
     <h1>CS2B: Intermediate Software Design in C++</h1>
-    <p>Select a link below to open the <strong>Web Player</strong> or download the <strong>Accessible PDF</strong>.</p>
+    <p>Select a visualization to open the <strong>Web Player</strong> or access the <strong>Accessible PDF</strong>.</p>
     
     <ul class="lecture-list">
         <li class="lecture-item">
             <div class="lecture-content">
-                <a class="play-link" href="cs2b-prj02">Project 02 Playlist</a>
-                <div class="description">Visualization and walkthrough of fundamental <code>Playlist</code> operations.</div>
+                <a class="play-link" href="cs2b-prj02/index.html" target="_blank">Project 02: Playlist Visualizer</a>
+                <div class="description">
+                    Step-by-step walkthrough of <code>_head</code> and <code>_previous_to_current</code> pointer logic for doubly-linked lists.
+                </div>
             </div>
             <div class="resource-links">
-                <a class="pdf-link" href="cs2b-prj02/cs2b-prj02.pdf" download>Download PDF</a>
+                <div class="pdf-group">
+                    <a class="pdf-link view-btn" href="cs2b-prj02/cs2b-prj02.pdf" target="_blank" title="View in browser">View PDF</a>
+                    <a class="pdf-link dl-btn" href="cs2b-prj02/cs2b-prj02.pdf" download title="Download to device">Download</a>
+                </div>
                 <span class="accessibility-note">✓ Accessible PDF</span>
             </div>
         </li>
-    </ul>
 
-    <footer style="margin-top: 50px; font-size: 0.8rem; color: #484f58;">
-        Built for CS2B Students
+        </ul>
+
+    <footer>
+        &copy; 2026 &bull; Built for CS2B Advanced C++ Students &bull; <em>Powered by GitHub Pages</em>
     </footer>
 </body>
 </html>
