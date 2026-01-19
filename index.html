@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2B: Advanced C++ Concepts</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --text: #c9d1d9;
+            --accent: #58a6ff;
+            --card: #161b22;
+            --border: #30363d;
+            --success: #3fb950;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1 { border-bottom: 1px solid var(--border); padding-bottom: 10px; color: white; }
+        .lecture-list { list-style: none; padding: 0; }
+        .lecture-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 12px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .lecture-content { flex-grow: 1; }
+        .lecture-item a.play-link {
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: block;
+        }
+        .description { font-size: 0.9rem; color: #8b949e; margin-top: 5px; }
+        
+        .resource-links {
+            margin-left: 20px;
+            text-align: right;
+            min-width: 150px;
+        }
+        .pdf-link {
+            display: inline-block;
+            background: #21262d;
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .pdf-link:hover { background: #30363d; border-color: #8b949e; }
+        
+        .accessibility-note {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--success);
+            margin-top: 8px;
+            font-style: italic;
+        }
+        code { background: #21262d; padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>CS2B: Intermediate Software Design in C++</h1>
+    <p>Select a lecture to open the <strong>Web Player</strong> or download the <strong>Accessible PDF</strong>.</p>
+    
+    <ul class="lecture-list">
+        <li class="lecture-item">
+            <div class="lecture-content">
+                <a class="play-link" href="lecture-01/">Lecture 01: Memory & Pointers</a>
+                <div class="description">Exploring <code>Stack</code> vs <code>Heap</code> and pointer arithmetic.</div>
+            </div>
+            <div class="resource-links">
+                <a class="pdf-link" href="lecture-01/lecture-01.pdf" download>Download PDF</a>
+                <span class="accessibility-note">✓ Accessible Screen-Reader PDF</span>
+            </div>
+        </li>
+
+        <li class="lecture-item">
+            <div class="lecture-content">
+                <a class="play-link" href="lecture-02/">Lecture 02: Classes & OOP</a>
+                <div class="description">Encapsulation and the <code>this</code> pointer.</div>
+            </div>
+            <div class="resource-links">
+                <a class="pdf-link" href="lecture-02/lecture-02.pdf" download>Download PDF</a>
+                <span class="accessibility-note">✓ Accessible Screen-Reader PDF</span>
+            </div>
+        </li>
+    </ul>
+
+    <footer style="margin-top: 50px; font-size: 0.8rem; color: #484f58;">
+        Built for CS2B Students • Generated from Keynote
+    </footer>
+</body>
+</html>
